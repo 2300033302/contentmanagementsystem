@@ -23,6 +23,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      # ================================
+      # BACKEND BUILD & PUSH (CI PROFILE)
+      # ================================
       - name: Build and push backend image
         uses: docker/build-push-action@v5
         with:
@@ -30,7 +33,12 @@ jobs:
           file: ./CMS-Backend/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/cmsbackend:latest
+          build-args: |
+            SPRING_PROFILES_ACTIVE=ci
 
+      # ================================
+      # FRONTEND BUILD & PUSH
+      # ================================
       - name: Build and push frontend image
         uses: docker/build-push-action@v5
         with:

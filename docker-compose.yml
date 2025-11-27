@@ -5,7 +5,9 @@ services:
     image: sathya224/cmsbackend:latest
     container_name: springboot
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3306/art
+      SPRING_PROFILES_ACTIVE: prod
+      # optional: override, but app.properties already has correct URL
+      SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3306/cms
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
     ports:
