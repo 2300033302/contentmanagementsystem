@@ -6,7 +6,9 @@ import Login from '../Pages/Login'
 import Signup from '../Pages/Signup'
 import Content from '../Pages/Content'
 import ContentPost from '../Pages/ContentPost'
-import ProtectedRoute from '../components/ProtectedRoute'
+//import ProtectedRoute from '../components/ProtectedRoute'
+//import ProtectedRoute from "../components/ProtectedRoute";
+import ProtectedRoute from '../components/ProtectedRoute';
 import AdminDashboard from '../Pages/Admin/AdminDashboard'
 import UserManagement from '../Pages/Admin/UserManagement'
 import Analytics from '../Pages/Admin/Analytics'
