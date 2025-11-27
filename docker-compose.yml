@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  backend:
+    image: sathya224/cmsbackend:latest
+    container_name: springboot
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3306/art
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    ports:
+      - "2025:2000"
+    restart: on-failure
+    networks:
+      - springboot-mysql-net
+
+  frontend:
+    image: sathya224/cmsfrontend:latest
+    container_name: react
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: on-failure
+    networks:
+      - springboot-mysql-net
+
+networks:
+  springboot-mysql-net:
