@@ -9,7 +9,9 @@ import ContentPost from '../Pages/ContentPost'
 //import ProtectedRoute from '../components/ProtectedRoute'
 //import ProtectedRoute from "../components/ProtectedRoute";
 //hello
-import ProtectedRoute from '../components/ProtectedRoute';
+import ProtectedRoute from "../Components/ProtectedRoute.jsx";
+
+//import ProtectedRoute from '../components/ProtectedRoute';
 import AdminDashboard from '../Pages/Admin/AdminDashboard'
 import UserManagement from '../Pages/Admin/UserManagement'
 import Analytics from '../Pages/Admin/Analytics'
